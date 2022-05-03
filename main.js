@@ -76,3 +76,6 @@ function formatStr(arr, dataObj){
     let newArr = arr[0].split(regExp); //split array element 0 using the regExp rule
     dataObj[newArr[0]] = newArr[2]; //store object
 }
+
+const {parentPort} = require('worker_threads');
+const admin = require("firebase admin");
