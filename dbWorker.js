@@ -1,0 +1,1 @@
+//need to download firebase and get it setup for next steps on the project
