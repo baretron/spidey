@@ -78,5 +78,5 @@ function formatStr(arr, dataObj){
 }
 
 const {parentPort} = require('worker_threads');
-const admin = require("firebase admin");
+const admin = require("firebase-admin");
         
