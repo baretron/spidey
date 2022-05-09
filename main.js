@@ -62,6 +62,6 @@ function formatStr(arr, dataObj){
     // regex to match all the words before the first digit
     let regExp = /[^A-Z]*(^\D+)/
     let newArr = arr[0].split(regExp); //split array element 0 using the regExp rule
-    dataObj[newArr[0]] = newArr[2]; //store object
+    dataObj[newArr[1]] = newArr[2]; //store object
 }
         
