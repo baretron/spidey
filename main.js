@@ -4,18 +4,6 @@ const cheerio = require('cheerio');
 const { Worker } = require('worker_threads');
 // store string in a variable
 const url = "https://www.iban.com/exchange-rates";
-// envoke function defined below
-// response is piped to then function
-// then function accepts two functions: the first is called on success the secondis called on failure
-fetchData(url).then( (res) => {
-    const html = res.data;
-    const $ = cheerio.load(html);
-    const statsTable = $('.table.table-bordered.table-hover.downloads > tbody > tr');
-    statsTable.each(function() {
-        let title = $(this).find('td').text();
-        console.log(title);
-    });
-}, reason => console.log(reason))
 
 // makes an asynchronous call to fetch data from supply url
 async function fetchData(url){
@@ -76,7 +64,4 @@ function formatStr(arr, dataObj){
     let newArr = arr[0].split(regExp); //split array element 0 using the regExp rule
     dataObj[newArr[0]] = newArr[2]; //store object
 }
-
-const {parentPort} = require('worker_threads');
-const admin = require("firebase-admin");
         
